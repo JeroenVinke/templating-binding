@@ -308,7 +308,7 @@ System.register(['aurelia-logging', 'aurelia-binding', 'aurelia-templating'], fu
           this.rawValue = sourceExpression.evaluate(source, this.lookupFunctions);
           this.updateTarget(this.rawValue);
 
-          if (this.mode === bindingMode.oneWay) {
+          if (this.mode !== bindingMode.oneTime) {
             enqueueBindingConnect(this);
           }
         };

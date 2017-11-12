@@ -260,7 +260,7 @@ export class ChildInterpolationBinding {
     this.rawValue = sourceExpression.evaluate(source, this.lookupFunctions);
     this.updateTarget(this.rawValue);
 
-    if (this.mode === bindingMode.oneWay) {
+    if (this.mode !== bindingMode.oneTime) {
       enqueueBindingConnect(this);
     }
   }

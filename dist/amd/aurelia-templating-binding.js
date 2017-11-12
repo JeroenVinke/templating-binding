@@ -296,7 +296,7 @@ define(['exports', 'aurelia-logging', 'aurelia-binding', 'aurelia-templating'], 
       this.rawValue = sourceExpression.evaluate(source, this.lookupFunctions);
       this.updateTarget(this.rawValue);
 
-      if (this.mode === _aureliaBinding.bindingMode.oneWay) {
+      if (this.mode !== _aureliaBinding.bindingMode.oneTime) {
         (0, _aureliaBinding.enqueueBindingConnect)(this);
       }
     };
